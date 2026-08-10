@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wall Mounted Clothes Drying Stand | S V Trading</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">S V Trading</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#products">Products</a>
+        <a href="index.html#contact">Contact</a>
+    </nav>
+
+</header>
+
+
+<!-- Product Detail -->
+
+<section class="product-detail">
+
+
+    <!-- Product Images -->
+
+    <div class="product-image">
+
+        <img id="mainProductImage"
+             src="images/drying-stand.jpg"
+             alt="Wall Mounted Clothes Drying Stand"
+             class="main-product-image">
+
+        <div class="thumbnail-gallery">
+
+            <img src="images/drying-stand.jpg"
+                 onclick="changeImage(this.src)"
+                 alt="Product Image 1">
+
+            <img src="images/drying-stand-2.jpg"
+     onclick="changeImage(this.src)"
+     alt="Product Image 2">
+<img src="images/drying-stand-3.jpg"
+     onclick="changeImage(this.src)"
+     alt="Product Image 3">
+     <img src="images/drying-stand-4.jpg"
+     onclick="changeImage(this.src)"
+     alt="Product Image 4">
+     <img src="images/drying-stand-5.jpg"
+     onclick="changeImage(this.src)"
+     alt="Product Image 5">
+     <img src="images/drying-stand-6.jpg"
+     onclick="changeImage(this.src)"
+     alt="Product Image 6">
+     <img src="images/drying-stand-7.jpg"
+     onclick="changeImage(this.src)"
+     alt="Product Image 7">
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Product Information -->
+
+    <div class="product-info">
+
+        <h1>Wall Mounted Clothes Drying Stand</h1>
+
+        <p class="product-subtitle">
+            Heavy Duty | Foldable | Space Saving
+        </p>
+
+
+        <!-- Price -->
+
+        <div class="price-box">
+
+            <span class="price-label">Price</span>
+
+            <h2 id="productPrice">Select Option</h2>
+
+            <p>
+                Price may vary according to selected line option.
+            </p>
+
+        </div>
+
+
+        <!-- Features -->
+
+        <h2>Product Features</h2>
+
+        <ul class="features-list">
+
+            <li>✓ Adjustable from 1 to 5 Lines</li>
+            <li>✓ Heavy Duty Iron Construction</li>
+            <li>✓ Wall Mounted Design</li>
+            <li>✓ Foldable & Space Saving</li>
+            <li>✓ Strong & Durable Structure</li>
+            <li>✓ Ideal for Balcony, Home & Utility Area</li>
+            <li>✓ Easy Installation</li>
+
+        </ul>
+
+
+        <!-- Specifications -->
+
+        <h2>Product Specification</h2>
+
+        <div class="specifications">
+
+            <div>
+                <strong>Material</strong>
+                <span>Iron / MS</span>
+            </div>
+
+            <div>
+                <strong>Type</strong>
+                <span>Wall Mounted</span>
+            </div>
+
+            <div>
+                <strong>Lines</strong>
+                <span>1 to 5 Adjustable</span>
+            </div>
+
+            <div>
+                <strong>Design</strong>
+                <span>Foldable</span>
+            </div>
+
+        </div>
+
+
+        <!-- Available Options -->
+
+        <h2>Available Options</h2>
+
+        <div class="options">
+
+            <button class="line-option"
+                    onclick="selectLine(this, '1 Line')">
+                1 Line
+            </button>
+
+            <button class="line-option"
+                    onclick="selectLine(this, '2 Line')">
+                2 Line
+            </button>
+
+            <button class="line-option"
+                    onclick="selectLine(this, '3 Line')">
+                3 Line
+            </button>
+
+            <button class="line-option"
+                    onclick="selectLine(this, '4 Line')">
+                4 Line
+            </button>
+
+            <button class="line-option"
+                    onclick="selectLine(this, '5 Line')">
+                5 Line
+            </button>
+
+        </div>
+
+
+        <p id="selectedLine">
+            Please select a line option
+        </p>
+
+
+        <!-- Buttons -->
+
+        <div class="product-actions">
+
+            <a href="#"
+               onclick="sendWhatsApp()"
+               class="whatsapp-btn">
+                WhatsApp Enquiry
+            </a>
+
+            <a href="index.html#contact"
+               class="details-btn">
+                Send Enquiry
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Footer -->
+
+<footer>
+
+    <p>© 2026 S V Trading | All Rights Reserved</p>
+
+</footer>
+
+
+
+<!-- JavaScript -->
+
+<script>
+
+function changeImage(imageSource) {
+
+    document.getElementById("mainProductImage").src = imageSource;
+
+}
+
+
+function selectLine(button, line) {
+
+    document.querySelectorAll(".line-option").forEach(function(btn) {
+
+        btn.classList.remove("selected");
+
+    });
+
+    button.classList.add("selected");
+
+
+    document.getElementById("selectedLine").innerText =
+        "Selected: " + line;
+
+
+    var price = "";
+
+
+    if (line === "1 Line" || line === "2 Line") {
+
+        price = "₹449";
+
+    }
+
+    else if (line === "4 Line" || line === "5 Line") {
+
+        price = "₹599";
+
+    }
+
+    else if (line === "3 Line") {
+
+        price = "Price on Enquiry";
+
+    }
+
+
+    document.getElementById("productPrice").innerText = price;
+
+}
+
+
+function sendWhatsApp() {
+
+    var selected =
+        document.getElementById("selectedLine").innerText;
+
+
+    if (selected === "Please select a line option") {
+
+        alert("Please select a line option first.");
+
+        return;
+
+    }
+
+
+    var line =
+        selected.replace("Selected: ", "");
+
+
+    var message =
+        "Hello S V Trading,%0A%0A" +
+        "I am interested in Wall Mounted Clothes Drying Stand.%0A" +
+        "Required Option: " + line + "%0A%0A" +
+        "Please share price and details.";
+
+
+    var phone = "919601818018";
+
+
+    window.open(
+        "https://wa.me/" + phone + "?text=" + message,
+        "_blank"
+    );
+
+}
+
+</script>
+<script>
+
+function changeImage(imageSource) {
+
+    document.getElementById("mainProductImage").src = imageSource;
+
+}
+
+
+function selectLine(button, line) {
+
+    document.querySelectorAll(".line-option").forEach(function(btn) {
+        btn.classList.remove("selected");
+    });
+
+    button.classList.add("selected");
+
+    document.getElementById("selectedLine").innerText =
+        "Selected: " + line;
+
+
+    var price = "";
+
+    if (line === "1 Line" || line === "2 Line") {
+
+        price = "₹449";
+
+    } else if (line === "4 Line" || line === "5 Line") {
+
+        price = "₹599";
+
+    } else if (line === "3 Line") {
+
+        price = "Price on Enquiry";
+
+    }
+
+    document.getElementById("productPrice").innerText = price;
+
+}
+
+
+function sendWhatsApp() {
+
+    var selected =
+        document.getElementById("selectedLine").innerText;
+
+
+    if (selected === "Please select a line option") {
+
+        alert("Please select a line option first.");
+        return;
+
+    }
+
+
+    var line =
+        selected.replace("Selected: ", "");
+
+
+    var message =
+        "Hello S V Trading,%0A%0A" +
+        "I am interested in Wall Mounted Clothes Drying Stand.%0A" +
+        "Required Option: " + line + "%0A%0A" +
+        "Please share price and details.";
+
+
+    var phone = "919601818018";
+
+
+    window.open(
+        "https://wa.me/" + phone + "?text=" + message,
+        "_blank"
+    );
+
+}
+
+</script>
+
+
+</body>
+
+</html>
