@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://svtrading0505.github.io/SV-TRADING-WEBSITE/sitemap.xml
